@@ -17,7 +17,7 @@ getLeagueOdds <- function(leagueGames,
 
   oddsMarket <- match.arg(oddsMarket)
 
-  map_dfr(
+  purrr::map_dfr(
     leagueGames[["Result"]][["Sports"]][[1]]$MatchGames, # this map is over each game in the league Id
     function(x){
       homeTeam <- x$HomeTeam$Name

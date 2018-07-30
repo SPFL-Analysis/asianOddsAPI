@@ -18,7 +18,7 @@ read_booke_odds_FT1X2 <- function(oddsString) {
     unlist() %>%
     stringi::stri_split_fixed(" ") %>%
     rlang::set_names(c("home", "away", "draw")) %>%
-    imap_dfr(
+    purrr::imap_dfr(
       ~data.frame(
         market = .y,
         bookie = .x[1],
@@ -52,7 +52,7 @@ read_booke_odds_FTHdp <- function(oddsList, Hdp) {
     rlang::set_names(
       c(paste0("home", Hdp, "ah"),
         paste0("away", Hdp, "ah"))) %>%
-    imap_dfr(
+    purrr::imap_dfr(
       ~data.frame(
         market = .y,
         bookie = .x[1],

@@ -18,7 +18,7 @@ getLeagueIds <- function(url, token,
     httr::GET(paste0(url, "/GetLeagues"),
               query = list(sportsType = sportsType,
                            marketTypeId = marketTypeId),
-              add_headers(AOToken = token))
+              httr::add_headers(AOToken = token))
 
   df <-
     httr::content(leagues, "parsed")[["Result"]][["Sports"]][[1]]$League %>%
