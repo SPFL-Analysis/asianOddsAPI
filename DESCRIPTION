@@ -10,4 +10,10 @@ ByteCompile: true
 Imports: 
     httr,
     magrittr,
-    purrr
+    purrr,
+    dplyr,
+    lubridate,
+    rlang,
+    stringi,
+    stringr
+RoxygenNote: 6.0.1
