@@ -1,20 +1,4 @@
 # asianOddsAPI
 
-The goal of asianOddsAPI is to ...
-
-## Installation
-
-You can install the released version of asianOddsAPI from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("asianOddsAPI")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-## basic example code
-```
+The goal of asianOddsAPI is to provide a easy acces to the asian odds web API in order to get odds and place positions.
 
