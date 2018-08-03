@@ -1,11 +1,11 @@
 
 
-#' Title
+#' Get ths odds out of a JSON list from the web API
 #'
-#' @param oddsMarket
-#' @param leagueGames
+#' @param leagueGames JSON list return from [getFeeds]
+#' @param oddsMarket One of the FT1X2, AH, OU markets
 #'
-#' @return
+#' @return A dataframe in tidy format
 #' @export
 #'
 #' @examples
@@ -22,6 +22,7 @@ getLeagueOdds <- function(leagueGames,
     function(x){
       homeTeam <- x$HomeTeam$Name
       awayTeam <- x$AwayTeam$Name
+      leagueName <- x$LeagueName
       matchDate <- x$StartsOn %>%
         stringi::stri_sub(., from = 1, to = 10) %>%
         lubridate::mdy(.)
@@ -47,6 +48,7 @@ getLeagueOdds <- function(leagueGames,
       }
 
       data.frame(
+        leagueName,
         homeTeam,
         awayTeam,
         matchDate,

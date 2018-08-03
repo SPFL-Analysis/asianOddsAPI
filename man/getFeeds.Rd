@@ -2,14 +2,17 @@
 % Please edit documentation in R/getFeeds.R
 \name{getFeeds}
 \alias{getFeeds}
-\title{Title}
+\title{Retrieves the feed or odds from the system.}
 \usage{
 getFeeds(url, token, leagueId, sportsType = 1, marketTypeId = 2,
-  oddsFormat = "00")
+  oddsFormat = "00", since = 1473254981365)
 }
 \arguments{
-\item{oddsFormat}{}
+\item{since}{}
 }
 \description{
-Title
+Retrieves the feed or odds from the system.
+}
+\references{
+\url{https://www.asianodds88.com/documentation.aspx/#4-4-getfeeds}
 }

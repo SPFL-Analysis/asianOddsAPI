@@ -2,14 +2,19 @@
 % Please edit documentation in R/getLeagueOdds.R
 \name{getLeagueOdds}
 \alias{getLeagueOdds}
-\title{Title}
+\title{Get ths odds out of a JSON list from the web API}
 \usage{
 getLeagueOdds(leagueGames, oddsMarket = c("FullTimeOneXTwo", "FullTimeHdp",
   "FullTimeOu"))
 }
 \arguments{
-\item{leagueGames}{}
+\item{leagueGames}{JSON list return from [getFeeds]}
+
+\item{oddsMarket}{One of the FT1X2, AH, OU markets}
+}
+\value{
+A dataframe in tidy format
 }
 \description{
-Title
+Get ths odds out of a JSON list from the web API
 }
