@@ -23,6 +23,12 @@ getLeagueOdds <- function(leagueGames,
       homeTeam <- x$HomeTeam$Name
       awayTeam <- x$AwayTeam$Name
       leagueName <- x$LeagueName
+      leagueId <- x$LeagueId
+      matchId <- x$MatchId
+      gameId = x$GameId
+      marketTypeId <- x$MarketTypeId
+      fullTimeFavoured <- x$FullTimeFavoured
+      minus_AH_for <- ifelse(fullTimeFavoured == 1, "home", "away")
       matchDate <- x$StartsOn %>%
         stringi::stri_sub(., from = 1, to = 10) %>%
         lubridate::mdy(.)
@@ -39,22 +45,30 @@ getLeagueOdds <- function(leagueGames,
           )
       } else {
         oddsString <-
-          data.frame(
+          dplyr::tibble(
             market = NA,
             bookie = NA,
-            odds = NA,
-            stringsAsFactors = F
+            odds = NA
           )
       }
 
-      data.frame(
-        leagueName,
-        homeTeam,
-        awayTeam,
-        matchDate,
-        oddsString,
-        stringsAsFactors = F
+    #this is a one row datframe
+    matchInfo <-
+      dplyr::tibble(
+        leagueId = leagueId,
+        leagueName = leagueName,
+        matchId = matchId,
+        gameId = gameId,
+        marketTypeId = marketTypeId,
+        homeTeam = homeTeam,
+        awayTeam = awayTeam,
+        matchDate = matchDate,
+        minus_AH_for = minus_AH_for
       )
+    #match odd can be multiple row dataframe so bind all rows with matchInfo cols
+    purrr::map_dfr(seq(nrow(oddsString)), function(row_num){
+      dplyr::bind_cols(matchInfo, oddsString[row_num, ])
+    })
     }
   ) %>%
     dplyr::filter(!is.na(market))

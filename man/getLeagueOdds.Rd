@@ -4,8 +4,8 @@
 \alias{getLeagueOdds}
 \title{Get ths odds out of a JSON list from the web API}
 \usage{
-getLeagueOdds(leagueGames, oddsMarket = c("FullTimeOneXTwo", "FullTimeHdp",
-  "FullTimeOu"))
+getLeagueOdds(leagueGames, oddsMarket = c("FullTimeOneXTwo",
+  "FullTimeHdp", "FullTimeOu"))
 }
 \arguments{
 \item{leagueGames}{JSON list return from [getFeeds]}

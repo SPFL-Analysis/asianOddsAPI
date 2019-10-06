@@ -4,7 +4,8 @@
 \alias{getLeagueIds}
 \title{Title}
 \usage{
-getLeagueIds(url, token, sportsType, marketTypeId, leaguesString = "SCOTLAND")
+getLeagueIds(url, token, sportsType, marketTypeId,
+  leaguesString = "SCOTLAND")
 }
 \arguments{
 \item{sport}{}

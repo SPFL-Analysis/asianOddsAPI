@@ -28,7 +28,7 @@ authenticateConnection <-
     Key <- httr::content(r, "parsed")$Result$Key
 
     auth <-
-      httr::GET(paste0(url, "/Register?username=webapiuser17"),
+      httr::GET(paste0(url, "/Register?username=", username),
                 httr::add_headers(AOToken = Token,
                             AOKey = Key)) %>%
       httr::content(., "parsed")

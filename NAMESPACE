@@ -2,7 +2,9 @@
 
 export("%>%")
 export(authenticateConnection)
+export(getAccountSummary)
 export(getFeeds)
+export(getHistoryStatement)
 export(getLeagueIds)
 export(getLeagueOdds)
 export(getSportsId)
