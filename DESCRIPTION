@@ -1,5 +1,5 @@
 Package: asianOddsAPI
-Version: 1.0
+Version: 1.1
 Title: Functions to interact with the asianOdds web API
 Description: Get odds for football games, both in-play and early prices, and place bets with asianOdds.
 Authors@R: person("Graeme", "McInroy", , "graememcinroy@gmail.com", c("aut", "cre"))
